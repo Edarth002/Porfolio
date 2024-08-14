@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transform_50{
+    transform: translateX(-50deg), translateY(-50deg);
+}
