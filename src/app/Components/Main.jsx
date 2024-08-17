@@ -1,15 +1,15 @@
-'use client'
-import React, { useEffect } from 'react'
+'use client';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
-import pic from '../../../public/Images/profile.jpg'
-import buildweb from '../../../public/Images/build.png'
-import content from '../../../public/Images/content.png'
-import uxdesign from '../../../public/Images/ux-design.png'
-import formal from '../../../public/Images/Formal.jpg'
-import gmail from '../../../public/Images/gmail-logo.png'
-import linkedin from '../../../public/Images/linkedin.png'
-import github from '../../../public/Images/github.png'
-import twitter from '../../../public/Images/twitter.png'
+import pic from '../../../public/Images/profile.jpg';
+import buildweb from '../../../public/Images/build.png';
+import content from '../../../public/Images/content.png';
+import uxdesign from '../../../public/Images/ux-design.png';
+import formal from '../../../public/Images/Formal.jpg';
+import gmail from '../../../public/Images/gmail-logo.png';
+import linkedin from '../../../public/Images/linkedin.png';
+import github from '../../../public/Images/github.png';
+import twitter from '../../../public/Images/twitter.png';
 import ImageCarousel from './ImageCarousel';
 
 export const Main = () => {
@@ -37,22 +37,33 @@ export const Main = () => {
               <li>
                 <a href="mailto:arthuronyeanusi@gmail.com">
                   <button className='bg-black rounded-full px-5 duration-300 py-2 text-white hover:scale-110 md:block hidden'>arthuronyeanusi@gmail.com</button>
-                  <Image src={gmail} width={30} height={30} className='block md:hidden grayscale' />
+                  <Image src={gmail} width={30} height={30} className='block md:hidden grayscale' alt="Gmail logo" />
                 </a>
               </li>
             </ul>
             <ul className='flex md:space-x-10 space-x-3 items-center'>
               <li className='hover:scale-110 duration-300 cursor-pointer'>
-                <a href="https://ng.linkedin.com/in/arthur-onyeanusi-30a102247"><p className='md:block hidden'>LinkedIn</p><Image src={linkedin} width={30} height={30} className='block md:hidden grayscale' /></a>
+                <a href="https://ng.linkedin.com/in/arthur-onyeanusi-30a102247">
+                  <p className='md:block hidden'>LinkedIn</p>
+                  <Image src={linkedin} width={30} height={30} className='block md:hidden grayscale' alt="LinkedIn logo" />
+                </a>
               </li>
               <li className='hover:scale-110 duration-300 cursor-pointer'>
-                <a href="https://github.com/Edarth002"><p className='md:block hidden'>Github</p> <Image src={github} width={30} height={30} className='block md:hidden grayscale' /></a>
+                <a href="https://github.com/Edarth002">
+                  <p className='md:block hidden'>Github</p>
+                  <Image src={github} width={30} height={30} className='block md:hidden grayscale' alt="GitHub logo" />
+                </a>
               </li>
               <li className='hover:scale-110 duration-300 cursor-pointer'>
-                <a href="https://x.com/Edarth123"><p className='md:block hidden'>Twitter</p><Image src={twitter} width={30} height={30} className='block md:hidden grayscale' /></a>
+                <a href="https://x.com/Edarth123">
+                  <p className='md:block hidden'>Twitter</p>
+                  <Image src={twitter} width={30} height={30} className='block md:hidden grayscale' alt="Twitter logo" />
+                </a>
               </li>
               <li className='hover:scale-110 duration-300 cursor-pointer'>
-                <a href="mailto:arthuronyeanusi@gmail.com"><button className='bg-black rounded-full px-5 duration-300 py-2 text-white hover:scale-110 md:block hidden animate-bounce'>Contact Us</button></a>
+                <a href="mailto:arthuronyeanusi@gmail.com">
+                  <button className='bg-black rounded-full px-5 duration-300 py-2 text-white hover:scale-110 md:block hidden animate-bounce'>Contact Us</button>
+                </a>
               </li>
             </ul>
           </ul>
@@ -62,12 +73,13 @@ export const Main = () => {
         <section className='flex w-full mx-auto justify-center'>
           <section className='md:p-10 p-5 mt-5 justify-center md:w-1/2'>
             <div className='relative w-full'>
-              <Image src={pic} className='md:w-40 h-32 md:h-40 w-32 grayscale rounded-full border-2 border-white object-cover mx-auto'/>
+              <Image src={pic} className='md:w-40 h-32 md:h-40 w-32 grayscale rounded-full border-2 border-white object-cover mx-auto' alt="Profile picture of Arthur Onyeanusi" />
               <p className='bg-white px-5 py-2 rounded-full -rotate-6 absolute top-1/2 md:ml-10 left-1/2 transform_50 cursor-pointer animate-bounce md:text-base text-xs'>Arthur Onyeanusi👋</p>
             </div>
             <h1 className='md:text-4xl text-2xl text-center my-3'>Building Scalable and Responsive Websites for Your Business to Stay On Top</h1>
-            <a href="mailto:arthuronyeanusi@gmail.com"><button className='bg-black mx-auto justify-center flex mt-7 rounded-full px-5 duration-300 py-2 text-white hover:scale-110 
-            '>Contact Us</button></a>
+            <a href="mailto:arthuronyeanusi@gmail.com">
+              <button className='bg-black mx-auto justify-center flex mt-7 rounded-full px-5 duration-300 py-2 text-white hover:scale-110'>Contact Us</button>
+            </a>
           </section>
         </section>
       </div>
@@ -79,19 +91,19 @@ export const Main = () => {
         {/* Cards */}
         <section className='flex flex-1 lg:flex-row flex-col items-center lg:justify-between my-5 md:px-10'>
           <div className='p-10 lg:w-[28%] w-full border-2 h-[23rem] shadow-lg shadow-stone-200 rounded-lg bg-stone-300 lg:my-0 mb-5'>
-            <Image src={uxdesign} className='w-20 h-20 justify-center mx-auto' />
+            <Image src={uxdesign} className='w-20 h-20 justify-center mx-auto' alt="UI/UX Design" />
             <h1 className='text-lg text-center mt-2'>UI/UX Design</h1>
-            <p className='text-stone-700 my-3'>Let's say you have got a developer, we can still work together. You bring in your imagination, we bring in our tools.</p>
+            <p className='text-stone-700 my-3'>Let&apos;s say you have got a developer, we can still work together. You bring in your imagination, we bring in our tools.</p>
           </div>
           <div className='p-10 lg:w-[28%] w-full border-2 h-[23rem] shadow-lg shadow-stone-200 rounded-lg bg-stone-300 lg:my-0 my-5'>
-          <Image src={buildweb} className='w-20 h-20 justify-center mx-auto' />
+            <Image src={buildweb} className='w-20 h-20 justify-center mx-auto' alt="Web Development" />
             <h1 className='text-lg text-center mt-2'>Web Development</h1>
             <p className='text-stone-700 my-3'>While you lead, we offer our expertise. Together, we develop websites that will drive human traffic to your organization. Just name it, we build it.</p>
           </div>
           <div className='p-10 lg:w-[28%] w-full border-2 h-[23rem] shadow-lg shadow-stone-200 rounded-lg bg-stone-300 lg:my-0 my-5'>
-          <Image src={content} className='w-20 h-20 justify-center mx-auto' />
+            <Image src={content} className='w-20 h-20 justify-center mx-auto' alt="Web Content Writing" />
             <h1 className='text-lg text-center mt-2'>Web Content Writing</h1>
-            <p className='text-stone-700 my-3'>Now, you've have built it! You need your website on the top three so it can generate more traffic. With optimized content, you can achieve that, and guess what, it is just a click away...</p>
+            <p className='text-stone-700 my-3'>Now, you&apos;ve built it! You need your website on the top three so it can generate more traffic. With optimized content, you can achieve that, and guess what, it is just a click away...</p>
           </div>
         </section>
       </section>
@@ -101,20 +113,21 @@ export const Main = () => {
         <h1 className='text-2xl'>Featured?</h1>
         <div className='w-20 hover:w-40 duration-300 h-1 rounded-full cursor-pointer bg-black'></div>
         {/* Scrollable Slide */}
-        <ImageCarousel/>
+        <ImageCarousel />
       </section>
 
       {/* Call To Action Section */}
       <section className='w-full relative'>
-          <Image src={formal} className='w-full h-[50vh] object-cover grayscale'/>
-          <div className='absolute p-10 inset-0 justify-center text-center parallax-content'>
-            <p className='text-white text-3xl p-10'>Why do people come to me?</p>
-            <a href="mailto:arthuronyeanusi@gmail.com"><button className='bg-black hover:scale-110 duration-300 cursor-pointer rounded-full px-5 py-2 text-white 
-            '>Contact Us</button></a>
+        <Image src={formal} className='w-full h-[50vh] object-cover grayscale' alt="Formal event" />
+        <div className='absolute p-10 inset-0 justify-center text-center parallax-content'>
+          <p className='text-white text-3xl p-10'>Why do people come to me?</p>
+          <a href="mailto:arthuronyeanusi@gmail.com">
+            <button className='bg-black hover:scale-110 duration-300 cursor-pointer rounded-full px-5 py-2 text-white'>Contact Us</button>
+          </a>
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 export default Main;
