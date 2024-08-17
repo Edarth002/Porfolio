@@ -10,7 +10,7 @@ import Nig from '../../../public/Images/NigerianFintech.jpg';
 import Elon from '../../../public/Images/ElonMusk.jpg';
 import Biden from '../../../public/Images/Biden.jpg';
 import responsive from '../../../public/Images/Responsive.png';
-import ecommerce from '../../../public/Images/Ecommerce.png'
+import ecommerce from '../../../public/Images/Ecommerce.png';
 
 // Define links for each image
 const imageLinks = [
@@ -61,8 +61,21 @@ const Slider = () => {
     <div className="relative overflow-hidden w-full my-5">
       <div className={`flex transition-transform duration-1000 ease-in-out`} style={{ transform: `translateX(-${(currentIndex * 100) / slidesToShow}%)` }}>
         {images.map((img, index) => (
-          <a key={index} href={imageLinks[index]} target="_blank" rel="noopener noreferrer" className="min-w-full md:mx-5 sm:min-w-[33.333%] bg-gray-100 block hover:scale-110 cursor-pointer">
-            <Image src={img} alt={`Slide ${index}`} layout="responsive" width={800} height={500} objectFit="cover"/>
+          <a 
+            key={index} 
+            href={imageLinks[index]} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="min-w-full md:mx-5 sm:min-w-[33.333%] bg-gray-100 block hover:scale-110 cursor-pointer"
+          >
+            <Image 
+              src={img} 
+              alt={`Slide ${index + 1} - Image`} 
+              layout="responsive" 
+              width={800} 
+              height={500} 
+              objectFit="cover" 
+            />
           </a>
         ))}
       </div>
