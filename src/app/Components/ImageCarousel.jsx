@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import w from '../../../public/Images/w.png';
+import w from '../../../public/Images/W.png';
 import multi from '../../../public/Images/multistep-form.png';
 import testimonial from '../../../public/Images/testimonial.png';
 import tip_calc from '../../../public/Images/tip-calc.png';
@@ -9,7 +9,7 @@ import chart from '../../../public/Images/Chart.png';
 import Nig from '../../../public/Images/NigerianFintech.jpg';
 import Elon from '../../../public/Images/ElonMusk.jpg';
 import Biden from '../../../public/Images/Biden.jpg';
-import responsive from '../../../public/Images/responsive.png';
+import responsive from '../../../public/Images/Responsive.png';
 import ecommerce from '../../../public/Images/Ecommerce.png'
 
 // Define links for each image
