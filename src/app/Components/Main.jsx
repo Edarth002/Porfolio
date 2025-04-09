@@ -126,7 +126,7 @@ export const Main = () => {
           </a>
         </div>
       </section>
-      <!-- Start of ChatBot (www.chatbot.com) code -->
+
 <script type="text/javascript">
     window.__be = window.__be || {};
     window.__be.id = "66c3555c86ccab0007190659";
@@ -137,7 +137,6 @@ export const Main = () => {
     })();
 </script>
 <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-<!-- End of ChatBot code -->
     </div>
   );
 }
