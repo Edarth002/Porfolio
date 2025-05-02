@@ -21,7 +21,7 @@ This repository contains the source code for my personal portfolio website. It s
 Interested in collaborating or have a project in mind? Feel free to reach out!
 
 - **Email**: arthuronyeanusi@gmail.com
-- **LinkedIn**: [Arthur Onyeanusi](https://ng.linkedin.com/in/arthur-onyeanusi-30a102247)
+- **LinkedIn**: [Arthur Onyeanusi](www.linkedin.com/in/arthur-onyeanusi-30a102247)
 - **GitHub**: [Edarth002](https://github.com/Edarth002)
 - **Twitter**: [@Edarth123](https://twitter.com/Edarth123)
 
