@@ -26,7 +26,7 @@ const imageLinks = [
   'https://ornate-kringle-6fad6d.netlify.app',
 ];
 
-const images = [w, multi, testimonial, tip_calc, snap, chart, Nig, Elon, Biden, responsive, ecommerce, moonandearthauto, inspirationscomputers];
+const images = [w, multi, testimonial, tip_calc, snap, chart, Nig, Elon, Biden, responsive, ecommerce, moonandearthauto, inspirationscomputers, price-board];
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
