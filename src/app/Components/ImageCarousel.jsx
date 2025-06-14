@@ -29,7 +29,7 @@ export default function CartwheelCarousel() {
   };
 
   return (
-    <div className="w-full h-[400px] flex flex-col items-center justify-center overflow-hidden relative">
+    <div className="w-full h-screen flex flex-col items-center justify-center overflow-hidden relative">
       <div className="w-full flex justify-between px-8 absolute top-1/2 -translate-y-1/2 z-10">
         <button onClick={() => rotateWheel(-1)} className="text-4xl font-bold text-blue-950 hover:scale-125 transition">&#10094;</button>
         <button onClick={() => rotateWheel(1)} className="text-4xl font-bold text-blue-950 hover:scale-125 transition">&#10095;</button>
