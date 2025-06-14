@@ -38,6 +38,9 @@ const slides = [
 export default function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const validSlides = slides.filter((slide) => slide.link !== "#");
 
   useEffect(() => {
     const updateSlidesToShow = () => {
@@ -51,25 +54,29 @@ export default function Slider() {
   }, []);
 
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        (prevIndex + 1) % slides.length
-      );
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % validSlides.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [validSlides.length, isPaused]);
 
   return (
-    <div className="relative overflow-hidden w-full py-6">
+    <div
+      className="relative overflow-hidden w-full py-6"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div
         className="flex transition-transform duration-1000 ease-in-out"
         style={{
-          width: `${slides.length * (100 / slidesToShow)}%`,
-          transform: `translateX(-${(currentIndex * 100) / slidesToShow}%)`,
+          width: `${(validSlides.length / slidesToShow) * 100}%`,
+          transform: `translateX(-${(currentIndex * 100) / validSlides.length}%)`,
         }}
       >
-        {slides.map((slide, index) => (
+        {validSlides.map((slide, index) => (
           <a
             key={index}
             href={slide.link}
@@ -81,7 +88,7 @@ export default function Slider() {
               <Image
                 src={slide.img}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-auto object-cover"
+                className="w-full h-60 object-cover"
                 placeholder="blur"
               />
             </div>
