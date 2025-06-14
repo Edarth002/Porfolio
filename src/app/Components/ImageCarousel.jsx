@@ -30,9 +30,9 @@ const slides = [
   { img: Biden, link: "https://docs.google.com/document/d/13irOaUNvuyslf_cJTQpbtSfDiufxZcXdGMQZa3YAXcE/edit?usp=sharing" },
   { img: responsive, link: "https://ornate-kringle-6fad6d.netlify.app" },
   { img: ecommerce, link: "#" },
-  { img: moonandearthauto, link: "#" },
-  { img: inspirationscomputers, link: "#" },
-  { img: priceboard, link: "#" },
+  { img: moonandearthauto, link: "moonandearthauto.com" },
+  { img: inspirationscomputers, link: "inspirationscomputers.com" },
+  { img: priceboard, link: "price-board-frontend.vercel.app" },
 ];
 
 export default function Slider() {
