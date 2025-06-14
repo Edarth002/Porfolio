@@ -1,23 +1,16 @@
-import { useState, useEffect } from "react";
+// components/CartwheelCarousel.jsx
+'use client'
+import { useState } from "react";
 import Image from "next/image";
 
-// Import images
+// Import your images
 import w from "../../../public/Images/W.png";
 import multi from "../../../public/Images/multistep-form.png";
 import testimonial from "../../../public/Images/testimonial.png";
 import tip_calc from "../../../public/Images/tip-calc.png";
 import snap from "../../../public/Images/snap.png";
 import chart from "../../../public/Images/Chart.png";
-import Nig from "../../../public/Images/NigerianFintech.jpg";
-import Elon from "../../../public/Images/ElonMusk.jpg";
-import Biden from "../../../public/Images/Biden.jpg";
-import responsive from "../../../public/Images/Responsive.png";
-import ecommerce from "../../../public/Images/Ecommerce.png";
-import moonandearthauto from "../../../public/Images/moonandearthauto.png";
-import inspirationscomputers from "../../../public/Images/inspirationscomputers.png";
-import priceboard from "../../../public/Images/priceboard.png";
 
-// Combine images and links properly
 const slides = [
   { img: w, link: "https://news-hompage-main.vercel.app" },
   { img: multi, link: "https://multi-step-form-rho-sooty.vercel.app" },
@@ -25,75 +18,61 @@ const slides = [
   { img: tip_calc, link: "https://tip-calculculate.netlify.app" },
   { img: snap, link: "https://intro-sect111.netlify.app" },
   { img: chart, link: "https://expenses-layout.vercel.app" },
-  { img: Nig, link: "https://docs.google.com/document/d/11u_-Uj3cDwK2pbQSEdVEmjkhwUibcQItdIKTe628-HQ/edit?usp=sharing" },
-  { img: Elon, link: "https://docs.google.com/document/d/1suNkfM_9dXxIfUT9kikwYeX2B72p3Y_JuG3VSDd7FtU/edit?usp=sharing" },
-  { img: Biden, link: "https://docs.google.com/document/d/13irOaUNvuyslf_cJTQpbtSfDiufxZcXdGMQZa3YAXcE/edit?usp=sharing" },
-  { img: responsive, link: "https://ornate-kringle-6fad6d.netlify.app" },
-  { img: ecommerce, link: "#" },
-  { img: moonandearthauto, link: "moonandearthauto.com" },
-  { img: inspirationscomputers, link: "inspirationscomputers.com" },
-  { img: priceboard, link: "price-board-frontend.vercel.app" },
 ];
 
-export default function Slider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesToShow, setSlidesToShow] = useState(3);
-  const [isPaused, setIsPaused] = useState(false);
+export default function CartwheelCarousel() {
+  const [current, setCurrent] = useState(0);
+  const radius = 300; // distance from center
 
-  const validSlides = slides.filter((slide) => slide.link !== "#");
-
-  useEffect(() => {
-    const updateSlidesToShow = () => {
-      setSlidesToShow(window.innerWidth < 768 ? 1 : 3);
-    };
-
-    updateSlidesToShow();
-    window.addEventListener("resize", updateSlidesToShow);
-
-    return () => window.removeEventListener("resize", updateSlidesToShow);
-  }, []);
-
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % validSlides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [validSlides.length, isPaused]);
+  const rotateWheel = (dir) => {
+    setCurrent((prev) => (prev + dir + slides.length) % slides.length);
+  };
 
   return (
-    <div
-      className="relative overflow-hidden w-full py-6"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="w-full h-[400px] flex flex-col items-center justify-center overflow-hidden relative">
+      <div className="w-full flex justify-between px-8 absolute top-1/2 -translate-y-1/2 z-10">
+        <button onClick={() => rotateWheel(-1)} className="text-4xl font-bold text-blue-950 hover:scale-125 transition">&#10094;</button>
+        <button onClick={() => rotateWheel(1)} className="text-4xl font-bold text-blue-950 hover:scale-125 transition">&#10095;</button>
+      </div>
+
       <div
-        className="flex transition-transform duration-1000 ease-in-out"
+        className="relative w-full h-full"
         style={{
-          width: `${(validSlides.length / slidesToShow) * 100}%`,
-          transform: `translateX(-${(currentIndex * 100) / validSlides.length}%)`,
+          perspective: "1000px",
         }}
       >
-        {validSlides.map((slide, index) => (
-          <a
-            key={index}
-            href={slide.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-1/2 md:w-1/3 px-2 shrink-0"
-          >
-            <div className="bg-white shadow-md hover:scale-105 transition-transform duration-300 rounded-xl overflow-hidden">
-              <Image
-                src={slide.img}
-                alt={`Slide ${index + 1}`}
-                className="w-full h-60 object-cover"
-                placeholder="blur"
-              />
-            </div>
-          </a>
-        ))}
+        <div
+          className="absolute top-1/2 left-1/2"
+          style={{
+            transformStyle: "preserve-3d",
+            transform: `translate(-50%, -50%) rotateY(-${(360 / slides.length) * current}deg)`,
+            transition: "transform 1s ease",
+          }}
+        >
+          {slides.map((slide, i) => {
+            const angle = (360 / slides.length) * i;
+
+            return (
+              <a
+                key={i}
+                href={slide.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute w-48 h-64 overflow-hidden rounded-xl shadow-lg bg-white hover:scale-105 transition-transform duration-300"
+                style={{
+                  transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
+                }}
+              >
+                <Image
+                  src={slide.img}
+                  alt={`Project ${i + 1}`}
+                  className="object-cover w-full h-full"
+                  placeholder="blur"
+                />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
