@@ -26,10 +26,9 @@ const projects = [
   { img: Nig, link: 'https://docs.google.com/document/d/11u_-Uj3cDwK2pbQSEdVEmjkhwUibcQItdIKTe628-HQ/edit?usp=sharing', name: 'Nigerian Fintech Report' },
   { img: Elon, link: 'https://docs.google.com/document/d/1suNkfM_9dXxIfUT9kikwYeX2B72p3Y_JuG3VSDd7FtU/edit?usp=sharing', name: 'Elon Musk Report' },
   { img: Biden, link: 'https://docs.google.com/document/d/13irOaUNvuyslf_cJTQpbtSfDiufxZcXdGMQZa3YAXcE/edit?usp=sharing', name: 'Biden Analysis' },
-  { img: responsive, link: 'https://ornate-kringle-6fad6d.netlify.app', name: 'Responsive Preview' },
-  { img: ecommerce, link: 'https://expenses-layout.vercel.app/', name: 'E-commerce Site' },
+  { img: responsive, link: 'https://ornate-kringle-6fad6d.netlify.app', name: 'Responsive Preview' }
   { img: moonandearthauto, link: 'moonandearthauto.com', name: 'Moon & Earth Auto' },
-  { img: inspirationscomputers, link: 'inspirationscomuters.com', name: 'Inspirations Computers' },
+  { img: inspirationscomputers, link: 'inspirationscomputers.com', name: 'Inspirations Computers' },
   { img: priceboard, link: 'price-board-frontend.vercel.app', name: 'Price Board' },
 ];
 
