@@ -45,8 +45,6 @@ export default function ProjectShowcase() {
           <a
             key={index}
             href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
             className="group rounded-xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transform hover:scale-[1.03] transition duration-300"
           >
             <div className="relative w-full h-60">
