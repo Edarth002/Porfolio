@@ -15,6 +15,7 @@ import ecommerce from '../../../public/Images/Ecommerce.png';
 import moonandearthauto from '../../../public/Images/moonandearthauto.png';
 import inspirationscomputers from '../../../public/Images/inspirationscomputers.png';
 import priceboard from '../../../public/Images/priceboard.png';
+import taskflow from '../../../public/Images/taskflow.png';
 
 const projects = [
   { img: w, link: 'https://news-hompage-main.vercel.app', name: 'News Homepage' },
@@ -30,6 +31,7 @@ const projects = [
   { img: moonandearthauto, link: 'https://moonandearthauto.com', name: 'Moon & Earth Auto' },
   { img: inspirationscomputers, link: 'https://inspirationscomputers.com', name: 'Inspirations Computers' },
   { img: priceboard, link: 'https://price-board-frontend.vercel.app', name: 'Price Board' },
+  { img: taskflow, link: 'https://taskflow-frontend.vercel.app', name: 'TaskFlow' },
 ];
 
 export default function ProjectShowcase() {
