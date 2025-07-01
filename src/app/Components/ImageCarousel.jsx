@@ -31,7 +31,7 @@ const projects = [
   { img: moonandearthauto, link: 'https://moonandearthauto.com', name: 'Moon & Earth Auto' },
   { img: inspirationscomputers, link: 'https://inspirationscomputers.com', name: 'Inspirations Computers' },
   { img: priceboard, link: 'https://price-board-frontend.vercel.app', name: 'Price Board' },
-  { img: taskflow, link: 'https://taskflow-frontend.vercel.app', name: 'TaskFlow' },
+  { img: taskflow, link: 'https://github.com/Edarth002/TaskFlow', name: 'TaskFlow' },
 ];
 
 export default function ProjectShowcase() {
