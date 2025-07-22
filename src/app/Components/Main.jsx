@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import pic from '../../../public/Images/profile.jpg';
+import pic from '../../../public/Images/profile.jpeg';
 import buildweb from '../../../public/Images/build.png';
 import content from '../../../public/Images/content.png';
 import uxdesign from '../../../public/Images/ux-design.png';
