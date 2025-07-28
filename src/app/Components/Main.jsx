@@ -75,18 +75,8 @@ export const Main = () => {
                 </a>
               </li>
               <li className='hover:scale-110 duration-300 cursor-pointer'>
-                <a
-  href="/resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  download
-  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
->
-  <button className='bg-black rounded-full px-5 duration-300 py-2 text-white hover:scale-110 md:block hidden animate-bounce'>Download Resume</button>
-</a>
-
-               
-                  
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className='bg-black rounded-full px-5 duration-300 py-2 text-white hover:scale-110 md:block hidden animate-bounce'>
+                  Download Resume
                 </a>
               </li>
             </ul>
