@@ -29,7 +29,7 @@ const projects = [
   { img: Biden, link: 'https://docs.google.com/document/d/13irOaUNvuyslf_cJTQpbtSfDiufxZcXdGMQZa3YAXcE/edit?usp=sharing', name: 'Biden Analysis' },
   { img: responsive, link: 'https://ornate-kringle-6fad6d.netlify.app', name: 'Responsive Preview' },
   { img: moonandearthauto, link: 'https://moonandearthauto.com', name: 'Moon & Earth Auto' },
-  { img: inspirationscomputers, link: 'https://inspirationscomputers.com', name: 'Inspirations Computers' },
+  { img: inspirationscomputers, link: 'https://www.inspirationscomputers.com', name: 'Inspirations Computers' },
   { img: priceboard, link: 'https://price-board-frontend.vercel.app', name: 'Price Board' },
   { img: taskflow, link: 'https://github.com/Edarth002/TaskFlow', name: 'TaskFlow' },
 ];
