@@ -17,6 +17,7 @@ import inspirationscomputers from '../../../public/Images/inspirationscomputers.
 import priceboard from '../../../public/Images/priceboard.png';
 import taskflow from '../../../public/Images/taskflow.png';
 import thrivesphere from '../../../public/Images/thrivesphere.png';
+import debsbakeshop from '../../../public/Images/debsbakeshop.png';
 
 const projects = [
   { img: w, link: 'https://news-hompage-main.vercel.app', name: 'News Homepage' },
@@ -34,6 +35,7 @@ const projects = [
   { img: priceboard, link: 'https://price-board-frontend.vercel.app', name: 'Price Board' },
   { img: taskflow, link: 'https://github.com/Edarth002/TaskFlow', name: 'TaskFlow' },
   { img: thrivesphere, link: 'https://thrive-sphere.vercel.app', name: 'Thrive Sphere' }
+    { img: debsbakeshop, link: 'https://debsbakeshop.vercel.app', name: 'Debs Bakery' }
 ];
 
 export default function ProjectShowcase() {
