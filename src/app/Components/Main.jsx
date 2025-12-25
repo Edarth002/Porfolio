@@ -42,8 +42,12 @@ export const Main = () => {
   
 
   return (
-    <div>
-      <div className='bg-stone-400 rounded-b-[4rem]'>
+    <div className="bg-[#0f0f0f] text-white min-h-screen font-sans selection:bg-green-500/30">
+  {/* The Background Glows */}
+  <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-green-900/20 blur-[120px]" />
+    <div className="absolute top-[20%] -right-[10%] w-[30%] h-[50%] rounded-full bg-purple-900/10 blur-[120px]" />
+  </div>
         {/* NavBar */}
         <nav className='p-5'>
           <ul className='flex justify-between items-center'>
