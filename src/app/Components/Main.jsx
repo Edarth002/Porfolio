@@ -40,7 +40,7 @@ export const Main = () => {
   }, []);
 
   return (
-    <div className="bg-[#0f0f0f] text-white min-h-screen font-sans selection:bg-green-500/30 overflow-x-hidden font-sans">
+    <div className="bg-[#0f0f0f] text-white min-h-screen font-sans selection:bg-green-500/30 overflow-x-hidden font-[family-name:var(--font-dm-serif)]">
       {/* Chatbot Script Integration */}
       <Script 
         id="chatbot-plugin"
