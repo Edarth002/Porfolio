@@ -12,6 +12,18 @@ import github from '../../../public/Images/github.png';
 import twitter from '../../../public/Images/twitter.png';
 import ImageCarousel from './ImageCarousel';
 
+const SkillBar = ({ label, percent }) => (
+  <div className="mb-4">
+    <div className="flex justify-between text-sm mb-1">
+      <span>{label}</span>
+      <span>{percent}</span>
+    </div>
+    <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+      <div className="bg-zinc-400 h-full transition-all duration-1000" style={{ width: percent }}></div>
+    </div>
+  </div>
+);
+
 export const Main = () => {
   useEffect(() => {
     const handleScroll = () => {
@@ -144,17 +156,7 @@ export const Main = () => {
   
 </section>
 
-const SkillBar = ({ label, percent }) => (
-  <div className="mb-4">
-    <div className="flex justify-between text-sm mb-1">
-      <span>{label}</span>
-      <span>{percent}</span>
-    </div>
-    <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-      <div className="bg-zinc-400 h-full transition-all duration-1000" style={{ width: percent }}></div>
-    </div>
-  </div>
-);
+
 
       {/* Featured Projects */}
       <section className='px-10 py-5'>
