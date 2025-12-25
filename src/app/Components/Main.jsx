@@ -48,6 +48,8 @@ export const Main = () => {
     <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-green-900/20 blur-[120px]" />
     <div className="absolute top-[20%] -right-[10%] w-[30%] h-[50%] rounded-full bg-purple-900/10 blur-[120px]" />
   </div>
+
+      <div className="relative z-10">
         {/* NavBar */}
         <nav className='p-5'>
           <ul className='flex justify-between items-center'>
@@ -146,7 +148,8 @@ export const Main = () => {
       </section>
 
 <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
-    </div>
+      </div>
+      </div>
   );
 }
 
