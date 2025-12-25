@@ -1,20 +1,18 @@
-import { DM_Serif_Text } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-// 1. Add 'variable' to the font configuration
-const dmSerif = DM_Serif_Text({ 
-  subsets: ["latin"], 
-  weight: ['400'],
-  variable: '--font-dm-serif' 
-});
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Arthur - Full Stack Developer",
+  description: "Portfolio of Arthur Onyeanusi",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* 2. Pass the variable to the body */}
-      <body className={`${dmSerif.variable} antialiased`}>
-        {children}
-      </body>
+      {/* Applying the font class directly to the body */}
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
