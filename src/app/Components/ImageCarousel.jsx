@@ -40,7 +40,7 @@ const projects = [
 
 export default function ProjectShowcase() {
   return (
-    <section className="w-full py-20 bg-white px-4">
+    <section className="w-full py-20 bg-black px-4">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold text-blue-950">My Portfolio Projects</h2>
         <p className="text-gray-600 mt-2">Click to view live demos or documents</p>
