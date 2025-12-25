@@ -156,7 +156,30 @@ export const Main = () => {
   
 </section>
 
+<section className="max-w-4xl mx-auto px-6 py-20 bg-[#0f0f0f]">
+  <h2 className="text-3xl font-bold text-center mb-16 text-white">Experience & Education</h2>
+  <div className="relative border-l-2 border-zinc-800 ml-4 md:ml-0 md:left-1/2">
+    {/* Experience 1: Enoverlab */}
+    <div className="mb-12 flex flex-col md:flex-row items-center w-full relative">
+      <div className="absolute -left-[11px] md:left-[-11px] w-5 h-5 bg-green-500 rounded-full border-4 border-[#0f0f0f]"></div>
+      <div className="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+        <span className="text-xs font-bold text-green-500 uppercase tracking-widest">DEC 2024 - JUNE 2025</span> [cite: 31]
+        <h3 className="text-lg font-bold text-white">Frontend Web Developer @ Enoverlab</h3> [cite: 29, 30]
+        <p className="text-zinc-500 text-sm mt-2">Built responsive web apps using React.js, Next.js, and TailwindCSS. [cite: 32]</p>
+      </div>
+    </div>
 
+    {/* Experience 2: Inspirations Computers */}
+    <div className="mb-12 flex flex-col md:flex-row items-center w-full relative">
+      <div className="absolute -left-[11px] md:left-[-11px] w-5 h-5 bg-zinc-600 rounded-full border-4 border-[#0f0f0f]"></div>
+      <div className="md:w-1/2 md:ml-auto md:pl-12 pl-8">
+        <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">JAN 2024</span> [cite: 38]
+        <h3 className="text-lg font-bold text-white">Web Developer @ Inspirations Computers</h3> [cite: 34, 35]
+        <p className="text-zinc-500 text-sm mt-2">Designed and deployed company website independently using Next.js. [cite: 39, 41]</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Featured Projects */}
       <section className='px-10 py-5'>
@@ -166,16 +189,25 @@ export const Main = () => {
         <ImageCarousel />
       </section>
 
-      {/* Call To Action Section */}
-      <section className='w-full relative'>
-        <Image src={formal} className='w-full h-[50vh] object-cover grayscale' alt="Formal event" />
-        <div className='absolute p-10 inset-0 justify-center text-center parallax-content'>
-          <p className='text-white text-3xl p-10'>Why do people come to me?</p>
-          <a href="mailto:arthuronyeanusi@gmail.com">
-            <button className='bg-black hover:scale-110 duration-300 cursor-pointer rounded-full px-5 py-2 text-white'>Contact Us</button>
-          </a>
-        </div>
-      </section>
+
+
+        <section className="max-w-7xl mx-auto px-6 py-20 bg-[#0f0f0f]">
+  <h2 className="text-3xl font-bold text-center mb-12 text-white">Services</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {[
+      { title: "Full-Stack Solutions", desc: "Building modern web apps with React, Next.js, and Node.js.", icon: "💻" }, [cite: 13, 14, 17]
+      { title: "Database Management", desc: "Expertise in MySQL and MongoDB for scalable data.", icon: "🗄️" }, [cite: 19, 20]
+      { title: "UI/UX Development", desc: "Crafting responsive designs with TailwindCSS.", icon: "🎨" }, 
+      { title: "API Development", desc: "Robust backend logic using Express.js.", icon: "⚙️" } [cite: 18]
+    ].map((service, i) => (
+      <div key={i} className="bg-zinc-900/50 backdrop-blur-md border border-zinc-800 p-8 rounded-[2rem] hover:bg-zinc-800 transition">
+        <div className="text-3xl mb-4">{service.icon}</div>
+        <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
+        <p className="text-zinc-500 text-sm">{service.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
 <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
       </div>
