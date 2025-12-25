@@ -100,7 +100,7 @@ export const Main = () => {
             </a>
           </section>
         </section>
-      </div>
+   
 
       {/* What We Do Section */}
       <section className='md:p-10 p-5'>
