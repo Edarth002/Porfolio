@@ -90,43 +90,71 @@ export const Main = () => {
         </nav>
 
         {/* Hero Section */}
-        <section className='flex w-full mx-auto justify-center'>
-          <section className='md:p-10 p-5 mt-5 justify-center md:w-1/2'>
-            <div className='relative w-full'>
-              <Image src={pic} className='md:w-40 h-32 md:h-40 w-32 grayscale rounded-full border-2 border-white object-cover mx-auto' alt="Profile picture of Arthur Onyeanusi" />
-              <p className='bg-white px-5 py-2 rounded-full -rotate-6 absolute top-1/2 md:ml-10 left-1/2 transform_50 cursor-pointer animate-bounce md:text-base text-xs'>Arthur Onyeanusi👋</p>
-            </div>
-            <h1 className='md:text-4xl text-2xl text-center my-3'>Building Scalable and Responsive Websites for Your Business to Stay On Top</h1>
-            <a href="mailto:arthuronyeanusi@gmail.com">
-              <button className='bg-black mx-auto justify-center flex mt-7 rounded-full px-5 duration-300 py-2 text-white hover:scale-110'>Contact Us</button>
-            </a>
-          </section>
-        </section>
+        <section className="max-w-7xl mx-auto px-6 pt-20 pb-10 flex flex-col md:flex-row items-center justify-between">
+  <div className="md:w-1/2 space-y-6">
+    <h2 className="text-xl font-medium text-gray-400">Onyeanusi Arthur | full-stack developer</h2>
+    <ul className="grid grid-cols-2 gap-4 text-sm text-gray-300">
+      <li>• Birthday: <span className="text-white">24 May</span></li>
+      <li>• Age: <span className="text-white">20</span></li>
+      <li>• Degree: <span className="text-white">BSc</span></li>
+      <li>• City: <span className="text-white">Lagos</span></li>
+    </ul>
+    <div className="flex gap-4 pt-4">
+      <a href='#contact' className="bg-zinc-800 hover:bg-zinc-700 px-8 py-3 rounded-xl border border-zinc-700 transition">Contact me</a>
+      <a href='#work' className="bg-zinc-100 text-black hover:bg-white px-8 py-3 rounded-xl transition">View my work</a>
+    </div>
+  </div>
+
+  <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
+    <div className="relative group">
+      {/* The abstract border shape from the design */}
+      <div className="absolute -inset-4 border border-zinc-700 rounded-[3rem] rotate-3 group-hover:rotate-0 transition duration-500"></div>
+      <Image 
+        src={pic} 
+        alt="Arthur" 
+        className="w-64 h-80 object-cover rounded-[2.5rem] grayscale hover:grayscale-0 transition duration-500 shadow-2xl"
+      />
+    </div>
+  </div>
+</section>
    
 
-      {/* What We Do Section */}
-      <section className='md:p-10 p-5'>
-        <h1 className='md:text-2xl text-xl md:mt-3 mt-5'>What Do We Do?</h1>
-        <div className='md:w-20 w-10 md:hover:w-40 hover:w-20 duration-300 h-1 rounded-full cursor-pointer bg-black'></div>
-        {/* Cards */}
-        <section className='flex flex-1 lg:flex-row flex-col items-center lg:justify-between my-5 md:px-10'>
-          <div className='p-10 lg:w-[28%] w-full border-2 h-[23rem] shadow-lg shadow-stone-200 rounded-lg bg-stone-300 lg:my-0 mb-5'>
-            <Image src={uxdesign} className='w-20 h-20 justify-center mx-auto' alt="UI/UX Design" />
-            <h1 className='text-lg text-center mt-2'>UI/UX Design</h1>
-            <p className='text-stone-700 my-3'>Let&apos;s say you have got a developer, we can still work together. You bring in your imagination, we bring in our tools.</p>
-          </div>
-          <div className='p-10 lg:w-[28%] w-full border-2 h-[23rem] shadow-lg shadow-stone-200 rounded-lg bg-stone-300 lg:my-0 my-5'>
-            <Image src={buildweb} className='w-20 h-20 justify-center mx-auto' alt="Web Development" />
-            <h1 className='text-lg text-center mt-2'>Web Development</h1>
-            <p className='text-stone-700 my-3'>While you lead, we offer our expertise. Together, we develop websites that will drive human traffic to your organization. Just name it, we build it.</p>
-          </div>
-          <div className='p-10 lg:w-[28%] w-full border-2 h-[23rem] shadow-lg shadow-stone-200 rounded-lg bg-stone-300 lg:my-0 my-5'>
-            <Image src={content} className='w-20 h-20 justify-center mx-auto' alt="Web Content Writing" />
-            <h1 className='text-lg text-center mt-2'>Web Content Writing</h1>
-            <p className='text-stone-700 my-3'>Now, you&apos;ve built it! You need your website on the top three so it can generate more traffic. With optimized content, you can achieve that, and guess what, it is just a click away...</p>
-          </div>
-        </section>
-      </section>
+      <section className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-8">
+  <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 backdrop-blur-sm">
+    <h3 className="text-xl mb-6 flex items-center gap-2">
+      <span className="p-2 bg-zinc-800 rounded-lg">🛠️</span> Backend developer
+    </h3>
+    <SkillBar label="MySQL" percent="89%" />
+    <SkillBar label="PHP" percent="20%" />
+    <SkillBar label="Nodejs" percent="80%" />
+    <SkillBar label="MongoDB" percent="80%" />
+    <SkillBar label="Python" percent="20%" />
+  </div>
+
+          <div className="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800 backdrop-blur-sm">
+    <h3 className="text-xl mb-6 flex items-center gap-2">
+      <span className="p-2 bg-zinc-800 rounded-lg">🛠️</span> Frontend developer
+    </h3>
+    <SkillBar label="HTML" percent="80%" />
+    <SkillBar label="CSS" percent="80%" />
+    <SkillBar label="TailwindCSS" percent="80%" />
+    <SkillBar label="Reactjs" percent="80%" />
+    <SkillBar label="Nextjs" percent="80%" />
+  </div>
+  
+</section>
+
+const SkillBar = ({ label, percent }) => (
+  <div className="mb-4">
+    <div className="flex justify-between text-sm mb-1">
+      <span>{label}</span>
+      <span>{percent}</span>
+    </div>
+    <div className="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+      <div className="bg-zinc-400 h-full transition-all duration-1000" style={{ width: percent }}></div>
+    </div>
+  </div>
+);
 
       {/* Featured Projects */}
       <section className='px-10 py-5'>
