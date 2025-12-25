@@ -40,7 +40,7 @@ export const Main = () => {
   }, []);
 
   return (
-    <div className="bg-[#0f0f0f] text-white min-h-screen font-sans selection:bg-green-500/30 overflow-x-hidden">
+    <div className="bg-[#0f0f0f] text-white min-h-screen font-sans selection:bg-green-500/30 overflow-x-hidden font-sans">
       {/* Chatbot Script Integration */}
       <Script 
         id="chatbot-plugin"
@@ -225,7 +225,7 @@ export const Main = () => {
 
         {/* Footer */}
         <footer className="py-10 text-center border-t border-zinc-900">
-          <p className="text-zinc-600 text-sm">© 2025 Arthur Onyeanusi. Built with Next.js & TailwindCSS[cite: 1, 14, 16].</p>
+          <p className="text-zinc-600 text-sm">© 2025 Arthur Onyeanusi. Built with Next.js & TailwindCSS.</p>
         </footer>
       </div>
     </div>
