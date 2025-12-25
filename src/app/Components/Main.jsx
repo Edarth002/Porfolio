@@ -53,7 +53,7 @@ export const Main = () => {
         {/* NavBar */}
         <nav className='p-5'>
           <ul className='flex justify-between items-center'>
-            <ul>
+            
               <li>
                 <a href="mailto:arthuronyeanusi@gmail.com">
                   <button className='bg-black rounded-full px-5 duration-300 py-2 text-white hover:scale-110 md:block hidden'>arthuronyeanusi@gmail.com</button>
@@ -86,7 +86,7 @@ export const Main = () => {
                 </a>
               </li>
             </ul>
-          </ul>
+          
         </nav>
 
         {/* Hero Section */}
