@@ -35,7 +35,7 @@ const projects = [
   { img: priceboard, link: 'https://price-board-frontend.vercel.app', name: 'Price Board' },
   { img: taskflow, link: 'https://github.com/Edarth002/TaskFlow', name: 'TaskFlow' },
   { img: thrivesphere, link: 'https://thrive-sphere.vercel.app', name: 'Thrive Sphere' },
-  { img: debsbakeshop, link: 'https://debsbakeshop.vercel.app', name: 'Debs Bakery' }
+  { img: debsbakeshop, link: 'https://debsuniquebakedgoods.com', name: 'Debs Bakery' }
 ];
 
 export default function ProjectShowcase() {
