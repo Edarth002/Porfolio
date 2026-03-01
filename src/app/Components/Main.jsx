@@ -200,7 +200,6 @@ export const Main = () => {
             {[
               { title: "Full-Stack Solutions", desc: "End-to-end apps with React and Node.js.", icon: "💻" },
               { title: "Database Management", desc: "Scalable data with MySQL and MongoDB.", icon: "🗄️" },
-              { title: "UI/UX Development", desc: "Pixel-perfect responsive design with Tailwind.", icon: "🎨" },
               { title: "API Development", desc: "Secure RESTful APIs using Express.js.", icon: "⚙️" }
             ].map((service, i) => (
               <div key={i} className="bg-zinc-900/40 border border-zinc-800 p-8 rounded-[2.5rem] hover:bg-zinc-800/60 transition group text-center">
