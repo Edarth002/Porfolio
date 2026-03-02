@@ -115,8 +115,8 @@ export const Main = () => {
               <li>• Status: <span className="text-white">Freelance Available</span></li>
             </ul>
             <div className="flex gap-4 pt-4">
-              <a href="mailto:arthuronyeanusi@gmail.com" className="bg-zinc-800 hover:bg-zinc-700 px-8 py-3 rounded-2xl border border-zinc-700 transition">Contact me</a>
-              <button className="bg-zinc-100 text-black hover:bg-white px-8 py-3 rounded-2xl transition font-bold">View my work</button>
+              <a href="mailto:arthuronyeanusi@gmail.com" className="bg-zinc-100 text-black hover:bg-white px-8 py-3 rounded-2xl transition font-bold">Contact me</a>
+              {/* <button className="bg-zinc-100 text-black hover:bg-white px-8 py-3 rounded-2xl transition font-bold">View my work</button> */}
             </div>
           </div>
 
