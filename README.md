@@ -8,7 +8,6 @@ Explore my work and services at [arthur-onyeanusi.vercel.app](https://arthur-ony
 
 ## 🛠️ Services Offered
 
-- **UI/UX Design**: Transforming ideas into intuitive and engaging user interfaces.
 - **Web Development**: Building responsive and scalable websites tailored to your business needs.
 - **Web Content Writing**: Creating SEO-optimized content to enhance your online presence and drive traffic.
 
