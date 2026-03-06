@@ -12,7 +12,7 @@ import Elon from '../../../public/Images/ElonMusk.jpg';
 import Biden from '../../../public/Images/Biden.jpg';
 import responsive from '../../../public/Images/Responsive.png';
 import ecommerce from '../../../public/Images/Ecommerce.png';
-import moonandearthauto from '../../../public/Images/moonandearthauto.png';
+import moonandearthauto from '../../../public/Images/moonearthauto.png';
 import inspirationscomputers from '../../../public/Images/inspirationscomputers.png';
 import priceboard from '../../../public/Images/priceboard.png';
 import taskflow from '../../../public/Images/taskflow.png';
