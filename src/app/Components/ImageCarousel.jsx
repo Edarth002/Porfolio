@@ -14,7 +14,6 @@ import responsive from '../../../public/Images/Responsive.png';
 import ecommerce from '../../../public/Images/Ecommerce.png';
 import moonandearthauto from '../../../public/Images/moonandearthauto.png';
 import inspirationscomputers from '../../../public/Images/inspirationscomputers.png';
-import priceboard from '../../../public/Images/priceboard.png';
 import taskflow from '../../../public/Images/taskflow.png';
 import thrivesphere from '../../../public/Images/thrivesphere.png';
 import debsbakeshop from '../../../public/Images/debsbakeshop.png';
@@ -32,7 +31,6 @@ const projects = [
   { img: responsive, link: 'https://ornate-kringle-6fad6d.netlify.app', name: 'Responsive Preview' },
   { img: moonandearthauto, link: 'https://moonandearthauto.com', name: 'Moon & Earth Auto' },
   { img: inspirationscomputers, link: 'https://www.inspirationscomputers.com', name: 'Inspirations Computers' },
-  { img: priceboard, link: 'https://price-board-frontend.vercel.app', name: 'Price Board' },
   { img: taskflow, link: 'https://github.com/Edarth002/TaskFlow', name: 'TaskFlow' },
   { img: thrivesphere, link: 'https://thrive-sphere.vercel.app', name: 'Thrive Sphere' },
   { img: debsbakeshop, link: 'https://debsuniquebakedgoods.com', name: 'Debs Bakery' }
