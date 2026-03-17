@@ -376,9 +376,9 @@ export default function Portfolio() {
                 marginBottom:"1.5rem",
               }}>Versatile. Precise.<br />Always learning.</h2>
               {[
-                <>I'm <strong style={{color:"var(--text)",fontWeight:500}}>Arthur Onyeanusi</strong>, a Full Stack Developer based in Nigeria, currently completing my B.Sc. in Computer Science at the <strong style={{color:"var(--text)",fontWeight:500}}>University of Nigeria, Nsukka</strong> (2021–2025).</>,
-                <>I build modern web applications with clean architecture and a sharp eye for UX. Whether it's a blazing-fast React frontend, a robust Node.js API, or a blockchain-integrated interface — I bridge the gap between design and engineering.</>,
-                <>I've shipped production apps across <strong style={{color:"var(--text)",fontWeight:500}}>startup, enterprise, and Web3</strong> environments — always focused on performance, accessibility, and code quality.</>,
+                <>I&aposm <strong style={{color:"var(--text)",fontWeight:500}}>Arthur Onyeanusi</strong>, a Full Stack Developer based in Nigeria, currently completing my B.Sc. in Computer Science at the <strong style={{color:"var(--text)",fontWeight:500}}>University of Nigeria, Nsukka</strong> (2021–2025).</>,
+                <>I build modern web applications with clean architecture and a sharp eye for UX. Whether it&aposs a blazing-fast React frontend, a robust Node.js API, or a blockchain-integrated interface — I bridge the gap between design and engineering.</>,
+                <>I&aposve shipped production apps across <strong style={{color:"var(--text)",fontWeight:500}}>startup, enterprise, and Web3</strong> environments — always focused on performance, accessibility, and code quality.</>,
               ].map((p, i) => (
                 <p key={i} style={{ color:"var(--muted)", lineHeight:1.9, marginBottom:"1.2rem", fontSize:"0.9rem" }}>{p}</p>
               ))}
