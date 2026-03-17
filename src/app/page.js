@@ -546,7 +546,7 @@ export default function Portfolio() {
           <div style={{ display:"flex", justifyContent:"center", alignItems:"center", gap:"0.6rem", color:"var(--accent)", fontSize:"0.7rem", letterSpacing:"0.2em", textTransform:"uppercase", marginBottom:"1rem" }}>
             Contact
           </div>
-          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1rem" }}>Let's build something great.</h2>
+          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1rem" }}>Let&aposs build something great.</h2>
           <p style={{ color:"var(--muted)", fontFamily:"'Instrument Serif',serif", fontStyle:"italic", fontSize:"1rem", marginBottom:"2.5rem" }}>
             Open to full-time roles, freelance projects, and exciting collaborations.
           </p>
