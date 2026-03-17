@@ -26,11 +26,13 @@ const SkillBar = ({ label, percent }) => (
 );
 
 export const Main = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState('dark');          // ← Fixed: removed TS generic (this was the crash)
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Theme initialization (system preference + localStorage)
+  // Theme initialization (system preference + localStorage) – safe for SSR
   useEffect(() => {
+    if (typeof window === 'undefined') return;        // ← Prevents any server-side execution
+
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -41,7 +43,7 @@ export const Main = () => {
       document.documentElement.classList.remove('dark');
       setTheme('light');
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Toggle theme with persistence
   const toggleTheme = () => {
@@ -56,7 +58,7 @@ export const Main = () => {
     }
   };
 
-  // Parallax (kept as-is, works in both modes)
+  // Parallax
   useEffect(() => {
     const handleScroll = () => {
       const content = document.querySelector('.parallax-content');
@@ -88,17 +90,16 @@ export const Main = () => {
         }}
       />
 
-      {/* Background Glows (adapted for light/dark) */}
+      {/* Background Glows */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-emerald-500/10 dark:bg-green-900/10 blur-[120px]" />
         <div className="absolute top-[20%] -right-[10%] w-[30%] h-[50%] rounded-full bg-purple-500/10 dark:bg-purple-900/10 blur-[120px]" />
       </div>
 
       <div className="relative z-10">
-        {/* NAVIGATION – Fully responsive + mobile headers visible */}
+        {/* NAVIGATION */}
         <nav className="p-6 max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
-            {/* Left: Email (icon on mobile, button on desktop) */}
             <a href="mailto:arthuronyeanusi@gmail.com" className="group flex items-center gap-3">
               <button className="bg-zinc-900 text-white border border-zinc-300 dark:border-zinc-800 rounded-full px-6 py-2 hover:bg-zinc-800 dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300 hidden md:block">
                 arthuronyeanusi@gmail.com
@@ -106,9 +107,8 @@ export const Main = () => {
               <Image src={gmail} width={30} height={30} className="md:hidden grayscale hover:grayscale-0 transition" alt="Gmail" />
             </a>
 
-            {/* Desktop + Mobile Menu */}
             <div className="flex items-center gap-6">
-              {/* Hamburger (mobile only) */}
+              {/* Hamburger */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="md:hidden flex flex-col gap-1.5"
@@ -119,7 +119,7 @@ export const Main = () => {
                 <span className={`block w-6 h-0.5 bg-zinc-950 dark:bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
               </button>
 
-              {/* Links – Text headers ALWAYS visible (even on mobile) */}
+              {/* Links (always visible text on mobile via hamburger) */}
               <ul
                 className={`flex flex-col md:flex-row md:items-center gap-6 md:gap-10 text-sm font-medium absolute md:static top-20 left-0 right-0 bg-white dark:bg-[#0f0f0f] md:bg-transparent p-6 md:p-0 shadow-xl md:shadow-none border-t border-zinc-200 dark:border-zinc-800 md:border-none transition-all duration-300 ${
                   menuOpen ? 'block' : 'hidden md:flex'
@@ -152,12 +152,10 @@ export const Main = () => {
                     aria-label="Toggle theme"
                   >
                     {theme === 'dark' ? (
-                      // Sun icon
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>
                     ) : (
-                      // Moon icon
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                       </svg>
@@ -165,7 +163,6 @@ export const Main = () => {
                   </button>
                 </li>
 
-                {/* Resume – visible on all screens */}
                 <li>
                   <a
                     href="/resume.pdf"
@@ -238,32 +235,30 @@ export const Main = () => {
           </div>
         </section>
 
-        {/* Certifications Section */}
-<section className="max-w-7xl mx-auto px-6 py-20">
-  <h2 className="text-3xl font-bold text-center mb-16 tracking-tight">Certifications</h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {/* TechCrush Backend Developer Bootcamp */}
-    <div className="bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 p-8 rounded-[2.5rem] hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition group flex flex-col items-center text-center">
-      <div className="text-5xl mb-6 group-hover:scale-110 transition duration-300">📜</div>
-      <h3 className="text-xl font-bold mb-3">Backend Developer Bootcamp</h3>
-      <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-2">TechCrush</p>
-      <p className="text-zinc-500 dark:text-zinc-500 text-xs mb-4">
-        Node.js • Express • RESTful APIs • MySQL • Modern Backend Development
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-        <a
-          href="https://www.linkedin.com/posts/arthur-onyeanusi-30a102247_just-earned-my-backend-development-certificate-activity-7347232405176410112-lZrn?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAD0PyzoBkuteYf9_0wn3HfA32oaoGdZ0548&utm_campaign=share_via"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-full font-medium transition text-sm"
-        >
-          View Certificate
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
+        {/* CERTIFICATIONS – Your TechCrush cert */}
+        <section className="max-w-7xl mx-auto px-6 py-20">
+          <h2 className="text-3xl font-bold text-center mb-16 tracking-tight">Certifications</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 p-8 rounded-[2.5rem] hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition group flex flex-col items-center text-center">
+              <div className="text-5xl mb-6 group-hover:scale-110 transition duration-300">📜</div>
+              <h3 className="text-xl font-bold mb-3">Backend Developer Bootcamp</h3>
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-2">TechCrush</p>
+              <p className="text-zinc-500 dark:text-zinc-500 text-xs mb-4">
+                Node.js • Express • RESTful APIs • MySQL • Modern Backend Development
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mt-auto">
+                <a
+                  href="https://www.linkedin.com/posts/arthur-onyeanusi-30a102247_just-earned-my-backend-development-certificate-activity-7347232405176410112-lZrn?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAD0PyzoBkuteYf9_0wn3HfA32oaoGdZ0548&utm_campaign=share_via"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-full font-medium transition text-sm"
+                >
+                  View Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* TIMELINE */}
         <section className="mx-auto px-6 py-20">
