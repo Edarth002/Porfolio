@@ -98,85 +98,72 @@ export const Main = () => {
 
       <div className="relative z-10">
         {/* NAVIGATION */}
-        <nav className="p-6 max-w-7xl mx-auto">
-          <div className="flex justify-between items-center">
-            <a href="mailto:arthuronyeanusi@gmail.com" className="group flex items-center gap-3">
-              <button className="bg-zinc-900 text-white border border-zinc-300 dark:border-zinc-800 rounded-full px-6 py-2 hover:bg-zinc-800 dark:hover:bg-white dark:hover:text-zinc-950 transition duration-300 hidden md:block">
-                arthuronyeanusi@gmail.com
-              </button>
-              <Image src={gmail} width={30} height={30} className="md:hidden grayscale hover:grayscale-0 transition" alt="Gmail" />
-            </a>
+        <nav className="px-4 md:px-6 py-4 max-w-7xl mx-auto">
+  <div className="flex justify-between items-center">
 
-            <div className="flex items-center gap-6">
-              {/* Hamburger */}
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden flex flex-col gap-1.5"
-                aria-label="Toggle menu"
-              >
-                <span className={`block w-6 h-0.5 bg-zinc-950 dark:bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-                <span className={`block w-6 h-0.5 bg-zinc-950 dark:bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`} />
-                <span className={`block w-6 h-0.5 bg-zinc-950 dark:bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
-              </button>
+    {/* Email */}
+    <a href="mailto:arthuronyeanusi@gmail.com" className="flex items-center gap-2">
+      <Image
+        src={gmail}
+        width={24}
+        height={24}
+        className="grayscale hover:grayscale-0 transition"
+        alt="Gmail"
+      />
+      <span className="hidden sm:inline text-sm font-medium">
+        arthuronyeanusi@gmail.com
+      </span>
+    </a>
 
-              {/* Links (always visible text on mobile via hamburger) */}
-              <ul
-                className={`flex flex-col md:flex-row md:items-center gap-6 md:gap-10 text-sm font-medium absolute md:static top-20 left-0 right-0 bg-white dark:bg-[#0f0f0f] md:bg-transparent p-6 md:p-0 shadow-xl md:shadow-none border-t border-zinc-200 dark:border-zinc-800 md:border-none transition-all duration-300 ${
-                  menuOpen ? 'block' : 'hidden md:flex'
-                }`}
-              >
-                <li>
-                  <a href="https://www.linkedin.com/in/arthur-onyeanusi-30a102247/" target="_blank" className="flex items-center gap-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                    <Image src={linkedin} width={24} height={24} className="grayscale hover:grayscale-0" alt="LinkedIn" />
-                    <span>LinkedIn</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/Edarth002" target="_blank" className="flex items-center gap-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                    <Image src={github} width={24} height={24} className="grayscale hover:grayscale-0" alt="GitHub" />
-                    <span>GitHub</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://x.com/Edarth123" target="_blank" className="flex items-center gap-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                    <Image src={twitter} width={24} height={24} className="grayscale hover:grayscale-0" alt="Twitter" />
-                    <span>Twitter</span>
-                  </a>
-                </li>
+    {/* Right Side */}
+    <div className="flex items-center gap-4 md:gap-6 text-sm font-medium">
 
-                {/* Theme Toggle */}
-                <li>
-                  <button
-                    onClick={toggleTheme}
-                    className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
-                    aria-label="Toggle theme"
-                  >
-                    {theme === 'dark' ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                      </svg>
-                    )}
-                  </button>
-                </li>
+      {/* LinkedIn */}
+      <a href="https://www.linkedin.com/in/arthur-onyeanusi-30a102247/" target="_blank" className="flex items-center gap-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+        <Image src={linkedin} width={20} height={20} className="grayscale hover:grayscale-0" alt="LinkedIn" />
+        <span className="hidden md:inline">LinkedIn</span>
+      </a>
 
-                <li>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    className="bg-zinc-900 text-white px-6 py-2 rounded-full font-bold hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 transition hidden md:block"
-                  >
-                    Resume
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      {/* GitHub */}
+      <a href="https://github.com/Edarth002" target="_blank" className="flex items-center gap-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+        <Image src={github} width={20} height={20} className="grayscale hover:grayscale-0" alt="GitHub" />
+        <span className="hidden md:inline">GitHub</span>
+      </a>
 
+      {/* Twitter */}
+      <a href="https://x.com/Edarth123" target="_blank" className="flex items-center gap-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+        <Image src={twitter} width={20} height={20} className="grayscale hover:grayscale-0" alt="Twitter" />
+        <span className="hidden md:inline">Twitter</span>
+      </a>
+
+      {/* Theme Toggle */}
+      <button
+        onClick={toggleTheme}
+        className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition"
+      >
+        {theme === 'dark' ? (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        )}
+      </button>
+
+      {/* Resume */}
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        className="bg-zinc-900 text-white px-4 py-2 rounded-full text-xs md:text-sm font-semibold hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 transition"
+      >
+        Resume
+      </a>
+
+    </div>
+  </div>
+</nav>
         {/* HERO */}
         <section className="max-w-7xl mx-auto px-6 pt-20 pb-10 flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 space-y-6 parallax-content">
