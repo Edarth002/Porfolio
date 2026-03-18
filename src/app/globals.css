@@ -1,7 +1,198 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --card: #16161f;
+  --border: rgba(255, 255, 255, 0.06);
+  --accent: #7cffe4;
+  --accent2: #ff6b6b;
+  --accent3: #c8b4ff;
+  --text: #f0f0f5;
+  --muted: #7a7a8c;
+}
 
-.transform_50{
-    transform: translateX(-50deg), translateY(-50deg);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.35;
+}
+
+/* ── Keyframe Animations ── */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroNameIn {
+  from { opacity: 0; transform: translateY(40px) skewY(2deg); }
+  to   { opacity: 1; transform: translateY(0) skewY(0); }
+}
+
+/* ── Marquee Tracks ── */
+
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track-reverse {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee 22s linear infinite reverse;
+}
+
+/* ── Project Cards ── */
+
+.project-card-wrap {
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card-wrap:hover {
+  transform: translateY(-6px);
+}
+
+.project-card-wrap:hover .top-bar {
+  transform: scaleX(1) !important;
+}
+
+.project-card-wrap:hover .proj-arrow {
+  color: var(--accent) !important;
+  transform: translate(4px, -4px) !important;
+}
+
+/* ── Skill Categories ── */
+
+.skill-cat {
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill-cat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 255, 228, 0.3) !important;
+}
+
+/* ── Timeline ── */
+
+.tl-dot {
+  transition: background 0.2s;
+}
+
+.tl-item:hover .tl-dot {
+  background: var(--accent) !important;
+}
+
+/* ── Contact Links ── */
+
+.contact-link-item {
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-link-item:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* ── Nav Links ── */
+
+.nav-link-item {
+  transition: color 0.2s;
+}
+
+.nav-link-item:hover {
+  color: var(--accent) !important;
+}
+
+/* ── Chip Items ── */
+
+.chip-item {
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.chip-item:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* ── Buttons ── */
+
+.btn-pri {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-pri:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124, 255, 228, 0.25);
+}
+
+.btn-sec {
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-sec:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nav-links-wrap {
+    display: none !important;
+  }
+
+  .hero-name-text {
+    font-size: clamp(3rem, 14vw, 5rem) !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

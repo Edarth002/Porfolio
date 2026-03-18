@@ -2,21 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
+import "./globals.css";
 
-/* ─────────────────────────────────────────
-   DATA
-───────────────────────────────────────── */
 const SKILLS = [
-  "JavaScript","TypeScript","React.js","Next.js","TailwindCSS",
-  "Vite","EJS","Node.js","Express.js","MongoDB","MySQL",
-  "Git","GitHub","Vercel","REST APIs","SSR",
+  "JavaScript","TypeScript","React.js","Next.js","TailwindCSS", "Node.js","Express.js","MongoDB","MySQL",
+  "Git","GitHub","Vercel","REST APIs",
 ];
 
 const SKILL_CATEGORIES = [
-  { title: "Frontend",       items: ["JavaScript","TypeScript","React.js","Next.js","TailwindCSS","Vite","EJS"] },
-  { title: "Backend",        items: ["Node.js","Express.js","REST APIs","SSR"] },
+  { title: "Frontend",       items: ["JavaScript","TypeScript","React.js","Next.js","TailwindCSS"] },
+  { title: "Backend",        items: ["Node.js","Express.js","REST APIs"] },
   { title: "Database",       items: ["MySQL","MongoDB"] },
-  { title: "DevOps & Tools", items: ["Git","GitHub","Vercel","CI/CD"] },
+  { title: "DevOps & Tools", items: ["Git","GitHub","Vercel"] },
 ];
 
 const EXPERIENCE = [
@@ -31,7 +28,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    period: "Sep 2024",
+    period: "Sep 2024 - Oct 2024",
     company: "Web3Lagos",
     role: "Frontend Web Developer",
     bullets: [
@@ -41,7 +38,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    period: "Jan 2024",
+    period: "Jan 2025 - Feb 2025",
     company: "Inspirations Computers Concept",
     role: "Web Developer",
     bullets: [
@@ -51,49 +48,66 @@ const EXPERIENCE = [
       "Presented the final product to stakeholders, showcasing all core functionality",
     ],
   },
+  {
+    period: "Jan 2026",
+    company: "Moon and Earth Auto",
+    role: "Web Developer",
+    bullets: [
+      "Independently designed, developed, and deployed the company website end-to-end",
+      "Implemented best practices in code quality and version control using Git & GitHub",
+      "Implemented Backend development first principles with Nextjs",
+            "Presented the final product to stakeholders, showcasing all core functionality",
+    ],
+  },
 ];
 
 const PROJECTS = [
   {
     num: "01 / Featured",
     title: "Personal Portfolio Site",
-    desc: "A fast, fully-deployed personal developer portfolio built with modern tooling. Deployed on Vercel with performance-first architecture.",
-    stack: ["Next.js","TailwindCSS","Vercel"],
+    desc: "A fully custom developer portfolio designed and built from scratch; no templates, no boilerplate. Built with Next.js, TailwindCSS for a responsive pixel-perfect layout, and deployed on Vercel with automatic CI/CD on every push. The site serves as a living showcase of my work. Scroll-triggered reveal animations, smooth anchor navigation, and deliberate typography choices make the experience feel polished end-to-end.",
+    stack: ["Next.js","Vercel"],
     href: "https://arthuronyeanusi.vercel.app",
   },
   {
     num: "02 / Web3",
-    title: "Blockchain Voting Platform",
-    desc: "UI for a decentralized voting system built at Web3Lagos. Integrated wallet connectivity and real-time on-chain data in collaboration with smart contract engineers.",
-    stack: ["React.js","Web3","Blockchain","Wallet SDK"],
-    href: "#",
+    title: "Web3 Lagos: Aurora",
+    desc: "Aurora is an innovative application developed for the Web3Bridge Hackathon to solve transparent payout of creators on the blockchain. Our project leverages smart contracts(hardhat) and React to provide a media streaming platform that uses the blockchain to track, collect and payout donations for creators.",
+    stack: ["React.js","Typescript","Etherjs",],
+    href: "https://github.com/victorbuikem/aurora-frontend",
   },
   {
-    num: "03 / Client Work",
+    num: "03 / Gig",
     title: "Inspirations Computers Website",
-    desc: "End-to-end design, development, and deployment of a corporate website. Delivered independently from concept to stakeholder presentation.",
+    desc: "Designed and built a full e-commerce-style bakery website for a food business. Implemented an image carousel, categorized menu pages, testimonials section, and Instagram feed integration. Delivered end-to-end from design to deployment on Vercel.",
     stack: ["Next.js","TailwindCSS","Git","Vercel"],
-    href: "#",
+    href: "https://debsuniquebakedgoods.com",
   },
   {
-    num: "04 / Product",
-    title: "Enoverlab Web Apps",
-    desc: "Built and optimized production-grade web applications as part of the Enoverlab engineering team — focusing on accessibility, performance, and clean UX.",
-    stack: ["React.js","Next.js","TailwindCSS","TypeScript"],
-    href: "#",
+    num: "04 / Enoverlab Product",
+    title: "Thrive Sphere",
+    desc: "Built a full-stack e-learning platform for personal and professional development. Features include course browsing, user authentication, coaching services, community pages, and a CMS-driven content backend. Frontend deployed on Vercel; backend powered by Strapi..",
+    stack: ["Next.js","TailwindCSS", "Strapi", "REST APIs", "Vercel"],
+    href: "https://thrive-sphere.vercel.app",
   },
+
+  {
+    num: "05 / Company Site",
+    title: "Moon and Earth Auto",
+    desc: " Designed and developed a full production website for a premium luxury car dealership based in Lagos, Nigeria. Built a multi-page experience covering a live database-backed vehicle inventory with category filtering, a workshop appointment booking system with time-slot selection, enquiry forms, and a Cloudinary-hosted video highlights section.",
+    stack: ["Next.js","TailwindCSS", "MySQL", "REST APIs", "Vercel"],
+    href: "https://moonearthauto.com",
+  },
+ 
 ];
 
 const STATS = [
   { number: "3+",    label: "Companies"       },
-  { number: "Web3",  label: "Blockchain work" },
-  { number: "15+",   label: "Technologies"    },
-  { number: "Full",  label: "Stack capable"   },
+  { number: "CSc",  label: "Degree" },
+  { number: "13+",   label: "Technologies"    },
+  { number: "Full",  label: "Stack Development"   },
 ];
 
-/* ─────────────────────────────────────────
-   HOOK – scroll reveal
-───────────────────────────────────────── */
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -110,9 +124,6 @@ function useReveal() {
   return { ref, visible };
 }
 
-/* ─────────────────────────────────────────
-   SUB-COMPONENTS
-───────────────────────────────────────── */
 function SectionLabel({ children }) {
   return (
     <div style={{ display:"flex", alignItems:"center", gap:"0.6rem",
@@ -138,9 +149,6 @@ function Reveal({ children, delay = 0, style = {} }) {
   );
 }
 
-/* ─────────────────────────────────────────
-   MAIN PAGE
-───────────────────────────────────────── */
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -160,85 +168,7 @@ export default function Portfolio() {
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
       </Head>
 
-      <style>{`
-        :root {
-          --bg: #0a0a0f;
-          --surface: #111118;
-          --card: #16161f;
-          --border: rgba(255,255,255,0.06);
-          --accent: #7cffe4;
-          --accent2: #ff6b6b;
-          --accent3: #c8b4ff;
-          --text: #f0f0f5;
-          --muted: #7a7a8c;
-        }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-          background: var(--bg);
-          color: var(--text);
-          font-family: 'DM Mono', monospace;
-          font-size: 14px;
-          line-height: 1.7;
-          overflow-x: hidden;
-        }
-        body::before {
-          content: '';
-          position: fixed; inset: 0;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-          pointer-events: none; z-index: 1000; opacity: 0.35;
-        }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-        @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-        @keyframes scrollLine {
-          0%{transform:scaleY(0);transform-origin:top}
-          50%{transform:scaleY(1);transform-origin:top}
-          100%{transform:scaleY(0);transform-origin:bottom}
-        }
-        @keyframes fadeUp {
-          from{opacity:0;transform:translateY(20px)}
-          to{opacity:1;transform:translateY(0)}
-        }
-        @keyframes heroNameIn {
-          from{opacity:0;transform:translateY(40px) skewY(2deg)}
-          to{opacity:1;transform:translateY(0) skewY(0)}
-        }
-        .marquee-track {
-          display: flex; gap: 1.5rem; width: max-content;
-          animation: marquee 28s linear infinite;
-        }
-        .marquee-track-reverse {
-          display: flex; gap: 1.5rem; width: max-content;
-          animation: marquee 22s linear infinite reverse;
-        }
-        .project-card-wrap { transition: transform 0.3s, border-color 0.3s; }
-        .project-card-wrap:hover { transform: translateY(-6px); }
-        .project-card-wrap:hover .top-bar { transform: scaleX(1) !important; }
-        .project-card-wrap:hover .proj-arrow { color: var(--accent) !important; transform: translate(4px,-4px) !important; }
-        .skill-cat:hover { transform: translateY(-4px); border-color: rgba(124,255,228,0.3) !important; }
-        .skill-cat { transition: transform 0.3s, border-color 0.3s; }
-        .tl-dot { transition: background 0.2s; }
-        .tl-item:hover .tl-dot { background: var(--accent) !important; }
-        .contact-link-item { transition: color 0.2s, border-color 0.2s; }
-        .contact-link-item:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
-        .nav-link-item { transition: color 0.2s; }
-        .nav-link-item:hover { color: var(--accent) !important; }
-        .chip-item { transition: border-color 0.2s, color 0.2s; }
-        .chip-item:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
-        .btn-pri { transition: transform 0.2s, box-shadow 0.2s; }
-        .btn-pri:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,255,228,0.25); }
-        .btn-sec { transition: border-color 0.2s, color 0.2s; }
-        .btn-sec:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
-        @media(max-width:768px){
-          .about-grid { grid-template-columns: 1fr !important; }
-          .nav-links-wrap { display: none !important; }
-          .hero-name-text { font-size: clamp(3rem,14vw,5rem) !important; }
-          .projects-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
-
-      {/* ── NAV ── */}
-      <nav style={{
+     <nav style={{
         position:"fixed", top:0, left:0, right:0, zIndex:100,
         display:"flex", alignItems:"center", justifyContent:"space-between",
         padding:"1.4rem 5vw",
@@ -254,30 +184,36 @@ export default function Portfolio() {
         <div className="nav-links-wrap" style={{ display:"flex", gap:"2.5rem", listStyle:"none" }}>
           {["about","skills","experience","projects","contact"].map(s => (
             <a key={s} href={`#${s}`} className="nav-link-item"
-              style={{ color: s==="contact" ? "var(--accent)" : "var(--muted)",
-                textDecoration:"none", fontSize:"0.75rem", letterSpacing:"0.12em",
-                textTransform:"uppercase",
-                ...(s==="contact" ? { border:"1px solid var(--accent)", padding:"0.45rem 1rem", borderRadius:2 } : {}),
-              }}>
-              {s === "contact" ? "Hire Me" : s}
+              style={{ color:"var(--muted)", textDecoration:"none", fontSize:"0.75rem",
+                letterSpacing:"0.12em", textTransform:"uppercase" }}>
+              {s}
             </a>
           ))}
+          <a
+            href="/resume.pdf"
+            download="Arthur_Onyeanusi_Resume.pdf"
+            className="nav-link-item"
+            style={{
+              color:"var(--accent)", textDecoration:"none", fontSize:"0.75rem",
+              letterSpacing:"0.12em", textTransform:"uppercase",
+              border:"1px solid var(--accent)", padding:"0.45rem 1rem", borderRadius:2,
+            }}
+          >
+            Download CV
+          </a>
         </div>
       </nav>
 
-      {/* ── HERO ── */}
       <section id="hero" style={{
         minHeight:"100vh", display:"grid", placeItems:"center",
         padding:"8rem 5vw 4rem", position:"relative", overflow:"hidden",
       }}>
-        {/* grid bg */}
         <div style={{
           position:"absolute", inset:0,
           backgroundImage:"linear-gradient(rgba(124,255,228,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(124,255,228,0.03) 1px,transparent 1px)",
           backgroundSize:"60px 60px",
           maskImage:"radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)",
         }} />
-        {/* glow */}
         <div style={{
           position:"absolute", width:600, height:600,
           background:"radial-gradient(circle,rgba(124,255,228,0.07) 0%,transparent 70%)",
@@ -285,7 +221,7 @@ export default function Portfolio() {
         }} />
 
         <div style={{ position:"relative", zIndex:2, maxWidth:900, width:"100%" }}>
-          {/* badge */}
+  
           <div style={{
             display:"inline-flex", alignItems:"center", gap:"0.5rem",
             background:"rgba(124,255,228,0.08)", border:"1px solid rgba(124,255,228,0.2)",
@@ -298,7 +234,7 @@ export default function Portfolio() {
             Available for opportunities
           </div>
 
-          {/* name */}
+
           <h1 className="hero-name-text" style={{
             fontFamily:"'Syne',sans-serif",
             fontSize:"clamp(3.5rem,9vw,8rem)",
@@ -344,7 +280,6 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* scroll indicator */}
         <div style={{
           position:"absolute", bottom:"2.5rem", left:"50%", transform:"translateX(-50%)",
           display:"flex", flexDirection:"column", alignItems:"center", gap:"0.5rem",
@@ -360,7 +295,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── ABOUT ── */}
       <section id="about" style={{ padding:"7rem 5vw", background:"var(--surface)" }}>
         <Reveal>
           <div className="about-grid" style={{
@@ -376,9 +310,9 @@ export default function Portfolio() {
                 marginBottom:"1.5rem",
               }}>Versatile. Precise.<br />Always learning.</h2>
               {[
-                <>I&aposm <strong style={{color:"var(--text)",fontWeight:500}}>Arthur Onyeanusi</strong>, a Full Stack Developer based in Nigeria, currently completing my B.Sc. in Computer Science at the <strong style={{color:"var(--text)",fontWeight:500}}>University of Nigeria, Nsukka</strong> (2021–2025).</>,
-                <>I build modern web applications with clean architecture and a sharp eye for UX. Whether it&aposs a blazing-fast React frontend, a robust Node.js API, or a blockchain-integrated interface — I bridge the gap between design and engineering.</>,
-                <>I&aposve shipped production apps across <strong style={{color:"var(--text)",fontWeight:500}}>startup, enterprise, and Web3</strong> environments — always focused on performance, accessibility, and code quality.</>,
+                <>I&apos;m <strong style={{color:"var(--text)",fontWeight:500}}>Arthur Onyeanusi</strong>, a Full Stack Developer based in Nigeria, currently completing my B.Sc. in Computer Science at the <strong style={{color:"var(--text)",fontWeight:500}}>University of Nigeria, Nsukka</strong> (2021–2025).</>,
+                <>I build modern web applications with clean architecture and a sharp eye for UX. Whether it&apos;s a blazing-fast React frontend, a robust Node.js API, or a blockchain-integrated interface — I bridge the gap between design and engineering.</>,
+                <>I&apos;ve shipped production apps across <strong style={{color:"var(--text)",fontWeight:500}}>startup, enterprise, and Web3</strong> environments — always focused on performance, accessibility, and code quality.</>,
               ].map((p, i) => (
                 <p key={i} style={{ color:"var(--muted)", lineHeight:1.9, marginBottom:"1.2rem", fontSize:"0.9rem" }}>{p}</p>
               ))}
@@ -408,9 +342,8 @@ export default function Portfolio() {
         </Reveal>
       </section>
 
-      {/* ── SKILLS ── */}
       <section id="skills" style={{ padding:"7rem 5vw" }}>
-        {/* marquees */}
+
         <div style={{ overflow:"hidden", marginBottom:"1rem" }}>
           <div className="marquee-track">
             {[...SKILLS, ...SKILLS].map((s, i) => (
@@ -468,7 +401,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── EXPERIENCE ── */}
       <section id="experience" style={{ padding:"7rem 5vw", background:"var(--surface)" }}>
         <Reveal><SectionLabel>Career</SectionLabel></Reveal>
         <Reveal delay={0.05}><h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1rem" }}>Work Experience</h2></Reveal>
@@ -501,7 +433,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ── PROJECTS ── */}
       <section id="projects" style={{ padding:"7rem 5vw" }}>
         <Reveal><SectionLabel>Work</SectionLabel></Reveal>
         <Reveal delay={0.05}><h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1rem" }}>Featured Projects</h2></Reveal>
@@ -546,7 +477,7 @@ export default function Portfolio() {
           <div style={{ display:"flex", justifyContent:"center", alignItems:"center", gap:"0.6rem", color:"var(--accent)", fontSize:"0.7rem", letterSpacing:"0.2em", textTransform:"uppercase", marginBottom:"1rem" }}>
             Contact
           </div>
-          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1rem" }}>Let&aposs build something great.</h2>
+          <h2 style={{ fontFamily:"'Syne',sans-serif", fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1rem" }}>Let&apos;s build something great.</h2>
           <p style={{ color:"var(--muted)", fontFamily:"'Instrument Serif',serif", fontStyle:"italic", fontSize:"1rem", marginBottom:"2.5rem" }}>
             Open to full-time roles, freelance projects, and exciting collaborations.
           </p>
@@ -562,10 +493,10 @@ export default function Portfolio() {
 
           <div style={{ display:"flex", gap:"1rem", justifyContent:"center", flexWrap:"wrap" }}>
             {[
-              { label:"GitHub",   href:"https://github.com/Edarth002",                               icon:<GithubIcon /> },
-              { label:"LinkedIn", href:"https://www.linkedin.com/in/arthuronyeanusi-30a102247/",     icon:<LinkedinIcon /> },
-              { label:"+234 702 647 6769", href:"tel:+2347026476769",                               icon:<PhoneIcon /> },
-              { label:"Portfolio", href:"https://arthuronyeanusi.vercel.app",                        icon:<GlobeIcon /> },
+              { label:"GitHub",        href:"https://github.com/Edarth002",                             icon:<GithubIcon /> },
+              { label:"LinkedIn",      href:"https://www.linkedin.com/in/arthuronyeanusi-30a102247/",   icon:<LinkedinIcon /> },
+              { label:"+234 702 647 6769", href:"tel:+2347026476769",                                   icon:<PhoneIcon /> },
+              { label:"Portfolio",     href:"https://arthuronyeanusi.vercel.app",                       icon:<GlobeIcon /> },
             ].map(l => (
               <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="contact-link-item" style={{
                 display:"inline-flex", alignItems:"center", gap:"0.5rem",
@@ -593,17 +524,38 @@ export default function Portfolio() {
 }
 
 /* ─────────────────────────────────────────
-   ICONS
+   ICON COMPONENTS
 ───────────────────────────────────────── */
 function GithubIcon() {
-  return <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>;
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+  );
 }
+
 function LinkedinIcon() {
-  return <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  );
 }
+
 function PhoneIcon() {
-  return <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.15 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>;
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.15 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+  );
 }
+
 function GlobeIcon() {
-  return <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>;
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+    </svg>
+  );
 }
