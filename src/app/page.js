@@ -169,40 +169,44 @@ export default function Portfolio() {
       </Head>
 
      <nav style={{
-        position:"fixed", top:0, left:0, right:0, zIndex:100,
-        display:"flex", alignItems:"center", justifyContent:"space-between",
-        padding:"1.4rem 5vw",
-        background: scrolled ? "rgba(10,10,15,0.92)" : "rgba(10,10,15,0.7)",
-        backdropFilter:"blur(16px)",
-        borderBottom:"1px solid var(--border)",
-        transition:"background 0.3s",
-      }}>
-        <a href="#hero" style={{ fontFamily:"'Syne',sans-serif", fontSize:"1.1rem",
-          fontWeight:800, letterSpacing:"-0.01em", color:"var(--text)", textDecoration:"none" }}>
-          Arthur<span style={{ color:"var(--accent)" }}>.</span>
-        </a>
-        <div className="nav-links-wrap" style={{ display:"flex", gap:"2.5rem", listStyle:"none" }}>
-          {["about","skills","experience","projects","contact"].map(s => (
-            <a key={s} href={`#${s}`} className="nav-link-item"
-              style={{ color:"var(--muted)", textDecoration:"none", fontSize:"0.75rem",
-                letterSpacing:"0.12em", textTransform:"uppercase" }}>
-              {s}
-            </a>
-          ))}
-          <a
-            href="/resume.pdf"
-            download="Arthur_Onyeanusi_Resume.pdf"
-            className="nav-link-item"
-            style={{
-              color:"var(--accent)", textDecoration:"none", fontSize:"0.75rem",
-              letterSpacing:"0.12em", textTransform:"uppercase",
-              border:"1px solid var(--accent)", padding:"0.45rem 1rem", borderRadius:2,
-            }}
-          >
-            Download CV
-          </a>
-        </div>
-      </nav>
+  position:"fixed", top:0, left:0, right:0, zIndex:100,
+  display:"flex", alignItems:"center", justifyContent:"space-between",
+  padding:"1.4rem 5vw",
+  background: scrolled ? "rgba(10,10,15,0.92)" : "rgba(10,10,15,0.7)",
+  backdropFilter:"blur(16px)",
+  borderBottom:"1px solid var(--border)",
+  transition:"background 0.3s",
+}}>
+  <a href="#hero" style={{ fontFamily:"'Syne',sans-serif", fontSize:"1.1rem",
+    fontWeight:800, letterSpacing:"-0.01em", color:"var(--text)", textDecoration:"none" }}>
+    Arthur<span style={{ color:"var(--accent)" }}>.</span>
+  </a>
+
+  {/* NAV LINKS (hidden on mobile via CSS) */}
+  <div className="nav-links-wrap" style={{ display:"flex", gap:"2.5rem", listStyle:"none" }}>
+    {["about","skills","experience","projects","contact"].map(s => (
+      <a key={s} href={`#${s}`} className="nav-link-item"
+        style={{ color:"var(--muted)", textDecoration:"none", fontSize:"0.75rem",
+          letterSpacing:"0.12em", textTransform:"uppercase" }}>
+        {s}
+      </a>
+    ))}
+  </div>
+
+  {/* ALWAYS VISIBLE */}
+  <a
+    href="/resume.pdf"
+    download="Arthur_Onyeanusi_Resume.pdf"
+    className="nav-link-item"
+    style={{
+      color:"var(--accent)", textDecoration:"none", fontSize:"0.75rem",
+      letterSpacing:"0.12em", textTransform:"uppercase",
+      border:"1px solid var(--accent)", padding:"0.45rem 1rem", borderRadius:2,
+    }}
+  >
+    Download CV
+  </a>
+</nav>
 
       <section id="hero" style={{
         minHeight:"100vh", display:"grid", placeItems:"center",
