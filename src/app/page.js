@@ -98,6 +98,13 @@ const PROJECTS = [
     stack: ["Next.js","TailwindCSS", "MySQL", "REST APIs", "Vercel"],
     href: "https://moonearthauto.com",
   },
+  {
+    num: "06 / Team Project",
+    title: "Swapyard",
+    desc: "Defined business logic for swapyard, an application designed to solve the needs of individuals who want to sell off their partly used household items or those who wish to purchase fairly used household items in good condition.",
+    stack: ["Next.js", "Typescript", "TailwindCSS", "MySQL", "REST APIs", "Vercel"],
+    href: "https://swapyard.vercel.app",
+  },
  
 ];
 
