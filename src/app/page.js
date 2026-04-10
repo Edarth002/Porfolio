@@ -70,7 +70,7 @@ const PROJECTS = [
     href: "https://arthuronyeanusi.vercel.app",
   },
   {
-    num: "02 / Web3",
+    num: "02 / Hackathon",
     title: "Web3 Lagos: Aurora",
     desc: "Aurora is an innovative application developed for the Web3Bridge Hackathon to solve transparent payout of creators on the blockchain. Our project leverages smart contracts(hardhat) and React to provide a media streaming platform that uses the blockchain to track, collect and payout donations for creators.",
     stack: ["React.js","Typescript","Etherjs",],
