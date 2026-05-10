@@ -105,6 +105,13 @@ const PROJECTS = [
     stack: ["Next.js", "Typescript", "TailwindCSS", "MySQL", "REST APIs", "Vercel"],
     href: "https://swapyard.vercel.app",
   },
+  {
+  num: "07 / Organizational Website Gig",
+  title: "MOH Community Global",
+  desc: "Developed a full-stack community and humanitarian platform for MOH Community Global, supporting global outreach programs, donations, event coordination, and sponsorship management. Built core backend systems for authentication, donation processing, event workflows, and sponsor management, alongside a scalable frontend interface for users and administrators to interact with real-time data and impact initiatives.",
+  stack: ["Next.js", "Typescript", "TailwindCSS", "Prisma", "MySQL", "REST APIs", "JWT Auth", "Cloudinary", "Vercel"],
+  href: "https://mohcommunityglobal.org/",
+}
  
 ];
 
