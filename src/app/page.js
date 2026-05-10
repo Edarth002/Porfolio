@@ -67,7 +67,7 @@ const PROJECTS = [
     title: "Personal Portfolio Site",
     desc: "A fully custom developer portfolio designed and built from scratch; no templates, no boilerplate. Built with Next.js, TailwindCSS for a responsive pixel-perfect layout, and deployed on Vercel with automatic CI/CD on every push. The site serves as a living showcase of my work. Scroll-triggered reveal animations, smooth anchor navigation, and deliberate typography choices make the experience feel polished end-to-end.",
     stack: ["Next.js","Vercel"],
-    href: "https://arthuronyeanusi.vercel.app",
+    href: "https://arthur-onyeanusi.vercel.app",
   },
   {
     num: "02 / Hackathon",
@@ -78,7 +78,7 @@ const PROJECTS = [
   },
   {
     num: "03 / Gig",
-    title: "Inspirations Computers Website",
+    title: "Debs Bake Shop",
     desc: "Designed and built a full e-commerce-style bakery website for a food business. Implemented an image carousel, categorized menu pages, testimonials section, and Instagram feed integration. Delivered end-to-end from design to deployment on Vercel.",
     stack: ["Next.js","TailwindCSS","Git","Vercel"],
     href: "https://debsuniquebakedgoods.com",
