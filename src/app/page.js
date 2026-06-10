@@ -196,7 +196,6 @@ export default function Portfolio() {
     Arthur<span style={{ color:"var(--accent)" }}>.</span>
   </a>
 
-  {/* NAV LINKS (hidden on mobile via CSS) */}
   <div className="nav-links-wrap" style={{ display:"flex", gap:"2.5rem", listStyle:"none" }}>
     {["about","skills","experience","projects","contact"].map(s => (
       <a key={s} href={`#${s}`} className="nav-link-item"
@@ -207,10 +206,9 @@ export default function Portfolio() {
     ))}
   </div>
 
-  {/* ALWAYS VISIBLE */}
   <a
-    href="/resume.pdf"
-    download="Arthur_Onyeanusi_Resume.pdf"
+    href="/cv.pdf"
+    download="Arthur_Onyeanusi_cv.pdf"
     className="nav-link-item"
     style={{
       color:"var(--accent)", textDecoration:"none", fontSize:"0.75rem",
