@@ -111,7 +111,21 @@ const PROJECTS = [
   desc: "Developed a full-stack community and humanitarian platform for MOH Community Global, supporting global outreach programs, donations, event coordination, and sponsorship management. Built core backend systems for authentication, donation processing, event workflows, and sponsor management, alongside a scalable frontend interface for users and administrators to interact with real-time data and impact initiatives.",
   stack: ["Next.js", "Typescript", "TailwindCSS", "Prisma", "MySQL", "REST APIs", "JWT Auth", "Cloudinary", "Vercel"],
   href: "https://mohcommunityglobal.org/",
-}
+}, 
+{
+    num: "08 / Client Gig",
+    title: "Elo Henry Materials",
+    desc: "Designed and developed a corporate web platform for a major building materials supplier and logistics provider in Nigeria. Built a structured product catalog showcasing cement, reinforcement steel, and aggregates, alongside an interactive quote request engine, project delivery tracking showcase, and direct WhatsApp enquiry routing for fast B2B order fulfillment.",
+    stack: ["Next.js", "TypeScript", "TailwindCSS", "REST APIs", "Vercel"],
+    href: "https://elohenrymaterials.com.ng/",
+  },
+  {
+    num: "09 / EdTech Platform",
+    title: "NESA Africa",
+    desc: "Engineered a high-performance web platform for the New Economy Skills Accelerator (NESA) Africa, driving tech talent training and workforce development. Implemented streamlined program cohort browsing, curriculum overviews, student registration funnels, lead capture pipelines, and an events/alumni showcase built for scale and seamless onboarding across the continent.",
+    stack: ["Next.js", "TypeScript", "TailwindCSS", "REST APIs", "Vercel"],
+    href: "https://nesa.africa/",
+  }
  
 ];
 
